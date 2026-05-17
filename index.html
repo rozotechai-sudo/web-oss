@@ -99,6 +99,27 @@
     .testimonial-name { font-weight: 600; font-size: .875rem; color: #1E293B; }
     .testimonial-location { font-size: .8rem; color: #94A3B8; }
 
+    /* Agenda tu Consulta: texto blanco siempre */
+    header.scrolled .nav-agenda { color: #fff !important; }
+
+    /* Tarjeta Salud — verde */
+    .card-salud .card-icon svg { fill: #88DB65; }
+    .card-salud .card-link { color: #88DB65; }
+    .card-salud .card-icon { background: rgba(136,219,101,0.12); }
+    .card-salud:hover { background: linear-gradient(135deg, rgba(136,219,101,0.18) 0%, #fff 75%); transform: translateY(-6px); box-shadow: 0 8px 32px rgba(136,219,101,0.18); }
+
+    /* Tarjeta Vida — azul */
+    .card-vida .card-icon svg { fill: #26469A; }
+    .card-vida .card-link { color: #26469A; }
+    .card-vida .card-icon { background: rgba(38,70,154,0.1); }
+    .card-vida:hover { background: linear-gradient(135deg, rgba(38,70,154,0.12) 0%, #fff 75%); transform: translateY(-6px); box-shadow: 0 8px 32px rgba(38,70,154,0.15); }
+
+    /* Tarjeta Complementarios — azul marino */
+    .card-comp .card-icon svg { fill: #1A3272; }
+    .card-comp .card-link { color: #1A3272; }
+    .card-comp .card-icon { background: rgba(26,50,114,0.1); }
+    .card-comp:hover { background: linear-gradient(135deg, rgba(26,50,114,0.12) 0%, #fff 75%); transform: translateY(-6px); box-shadow: 0 8px 32px rgba(26,50,114,0.15); }
+
     @media(max-width:768px) {
       .testimonials-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 24px; }
@@ -129,7 +150,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>Protegemos tu <span class="green">salud</span>,<br>tu <span class="green">vida</span> y tu <span class="green">futuro</span></h1>
+      <h1>Protegemos tu <span class="green">salud</span>,<br>tu <span style="color:#26469A">vida</span> y tu <span class="green">futuro</span></h1>
       <p class="hero-sub">Asesoría profesional en seguros diseñada para ti y tu familia. Te ayudamos a encontrar la cobertura perfecta para cada etapa de tu vida.</p>
       <div class="hero-actions">
         <a href="contacto.html" class="btn btn-green">
@@ -167,24 +188,24 @@
         <p class="section-sub">Te ofrecemos los mejores planes adaptados a tus necesidades y presupuesto, con asesoría personalizada en cada paso.</p>
       </div>
       <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon green">
+        <div class="card card-salud">
+          <div class="card-icon">
             <svg viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6L12 2zm0 4.8l4 2.2v3.5c0 3-2 5.8-4 7.2-2-1.4-4-4.2-4-7.2V9l4-2.2z"/></svg>
           </div>
           <h3>Seguros de Salud</h3>
           <p>Planes médicos individuales y familiares con cobertura completa. Te ayudamos a encontrar el plan ideal para ti y tu presupuesto.</p>
           <a href="servicios.html" class="card-link">Ver planes →</a>
         </div>
-        <div class="card">
-          <div class="card-icon green">
+        <div class="card card-vida">
+          <div class="card-icon">
             <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
           </div>
           <h3>Seguros de Vida</h3>
           <p>Protege el futuro económico de tu familia. Garantiza el bienestar de tus seres queridos con un plan diseñado para tus necesidades.</p>
           <a href="servicios.html" class="card-link">Ver planes →</a>
         </div>
-        <div class="card">
-          <div class="card-icon green">
+        <div class="card card-comp">
+          <div class="card-icon">
             <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
           </div>
           <h3>Seguros Complementarios</h3>
