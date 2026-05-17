@@ -1,13 +1,15 @@
 /* === Olga Santana Insurance === */
 
 :root {
-  --blue: #1A56DB;
-  --blue-dark: #1E3A8A;
-  --green: #16A34A;
-  --green-light: #22C55E;
+  --blue: #26469A;
+  --blue-dark: #1A3272;
+  --green: #88DB65;
+  --green-dark: #6DC44C;
+  --cyan: #39C6E2;
+  --cyan-dark: #27A8C2;
   --dark: #0F172A;
   --gray: #64748B;
-  --light: #F0FDF4;
+  --light: #F0F9FF;
   --white: #FFFFFF;
   --text: #1E293B;
   --font: 'Poppins', sans-serif;
@@ -32,9 +34,11 @@ h3{font-size:1.15rem}
 /* Buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:8px;font-weight:600;font-size:.9rem;border:2px solid transparent;transition:all var(--tr);white-space:nowrap;cursor:pointer}
 .btn-green{background:var(--green);color:#fff}
-.btn-green:hover{background:#15803D;transform:translateY(-2px);box-shadow:0 8px 20px rgba(22,163,74,.35)}
+.btn-green:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(136,219,101,.4)}
 .btn-blue{background:var(--blue);color:#fff}
-.btn-blue:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,86,219,.35)}
+.btn-blue:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(38,70,154,.35)}
+.btn-cyan{background:var(--cyan);color:#fff}
+.btn-cyan:hover{background:var(--cyan-dark);transform:translateY(-2px)}
 .btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
 .btn-outline-white:hover{background:rgba(255,255,255,.15)}
 .btn-outline-blue{background:transparent;color:var(--blue);border-color:var(--blue)}
@@ -60,6 +64,8 @@ header.scrolled .nav-links a:hover,header.scrolled .nav-links a.active{color:var
 .nav-agenda:hover{background:rgba(255,255,255,.25)}
 header.scrolled .nav-agenda{background:var(--blue);color:#fff;border-color:var(--blue)}
 header.scrolled .nav-agenda:hover{background:var(--blue-dark)}
+/* Logo más pequeño en páginas internas */
+header.solid .nav-logo img{width:180px}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
 .nav-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px;display:block;transition:all var(--tr)}
 
@@ -67,7 +73,7 @@ header.scrolled .nav-agenda:hover{background:var(--blue-dark)}
 .section{padding:88px 24px}
 .section-gray{background:#F8FAFC}
 .section-inner{max-width:1200px;margin:0 auto}
-.section-tag{display:inline-block;background:#F0FDF4;color:#16A34A;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:50px;margin-bottom:14px;border:1px solid #BBF7D0}
+.section-tag{display:inline-block;background:#EBF9FF;color:var(--cyan-dark);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:50px;margin-bottom:14px;border:1px solid var(--cyan)}
 .section-title{color:var(--dark);margin-bottom:14px}
 .section-sub{font-size:1rem;color:var(--gray);margin-bottom:44px;max-width:560px;line-height:1.75}
 .text-center{text-align:center}
@@ -79,17 +85,17 @@ header.scrolled .nav-agenda:hover{background:var(--blue-dark)}
 .card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
 .card-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
 .card-icon.green{background:var(--light)}
-.card-icon svg{width:26px;height:26px;fill:var(--green)}
+.card-icon svg{width:26px;height:26px;fill:var(--blue)}
 .card h3{color:var(--dark);margin-bottom:10px}
 .card p{font-size:.9rem;line-height:1.75;color:var(--gray)}
-.card-link{display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-weight:600;font-size:.875rem;margin-top:16px;transition:gap var(--tr)}
+.card-link{display:inline-flex;align-items:center;gap:6px;color:var(--cyan-dark);font-weight:600;font-size:.875rem;margin-top:16px;transition:gap var(--tr)}
 .card-link:hover{gap:10px}
 
 /* Why us */
 .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
 .feature{display:flex;gap:14px;align-items:flex-start;background:#fff;padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #E2E8F0}
 .feature-icon{width:40px;height:40px;min-width:40px;background:var(--light);border-radius:10px;display:flex;align-items:center;justify-content:center}
-.feature-icon svg{width:20px;height:20px;fill:var(--green)}
+.feature-icon svg{width:20px;height:20px;fill:var(--cyan-dark)}
 .feature h4{color:var(--dark);margin-bottom:4px;font-size:.95rem}
 .feature p{font-size:.875rem;color:var(--gray);line-height:1.6}
 
@@ -121,7 +127,7 @@ header.scrolled .nav-agenda:hover{background:var(--blue-dark)}
 .service-text p{color:var(--gray);margin-bottom:22px;line-height:1.8;font-size:.95rem}
 .check-list{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
 .check-list li{display:flex;align-items:center;gap:10px;font-size:.9rem}
-.check-list li::before{content:'✓';color:var(--green);font-weight:700;min-width:18px}
+.check-list li::before{content:'✓';color:var(--green);font-weight:700;min-width:18px;font-size:1.1rem}
 
 /* About */
 .about-intro{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -130,7 +136,7 @@ header.scrolled .nav-agenda:hover{background:var(--blue-dark)}
 .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
 .value-card{text-align:center;padding:36px 24px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #E2E8F0}
 .value-icon{width:60px;height:60px;background:var(--light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.value-icon svg{width:28px;height:28px;fill:var(--green)}
+.value-icon svg{width:28px;height:28px;fill:var(--blue)}
 .value-card h3{color:var(--dark);margin-bottom:8px}
 .value-card p{font-size:.875rem;color:var(--gray)}
 
@@ -139,7 +145,7 @@ header.scrolled .nav-agenda:hover{background:var(--blue-dark)}
 .contact-info{display:flex;flex-direction:column;gap:18px}
 .contact-card{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);display:flex;gap:14px;align-items:flex-start;border:1px solid #E2E8F0}
 .contact-icon{width:40px;height:40px;min-width:40px;background:var(--light);border-radius:10px;display:flex;align-items:center;justify-content:center}
-.contact-icon svg{width:20px;height:20px;fill:var(--green)}
+.contact-icon svg{width:20px;height:20px;fill:var(--blue)}
 .contact-card h4{color:var(--dark);margin-bottom:3px;font-size:.9rem}
 .contact-card p,.contact-card a{color:var(--gray);font-size:.875rem;line-height:1.6}
 .contact-card a:hover{color:var(--blue)}
