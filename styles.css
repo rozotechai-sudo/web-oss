@@ -42,13 +42,14 @@ h3{font-size:1.15rem}
 
 /* Header */
 header{position:fixed;top:0;left:0;right:0;z-index:999;background:transparent;transition:background .4s ease,box-shadow .4s ease}
-header.scrolled,header.solid{background:rgba(255,255,255,.97);backdrop-filter:blur(8px);box-shadow:0 1px 12px rgba(0,0,0,.08)}
+header.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(8px);box-shadow:0 1px 12px rgba(0,0,0,.08)}
+header.solid{background:rgba(255,255,255,.97);box-shadow:0 1px 12px rgba(0,0,0,.08)}
 header.solid .nav-links a{color:var(--text)}
 header.solid .nav-links a:hover,header.solid .nav-links a.active{color:var(--blue)}
-header.solid .nav-agenda{background:var(--blue);color:#fff;border-color:var(--blue)}
+header.solid .nav-agenda{background:var(--blue) !important;color:#fff !important;border-color:var(--blue) !important}
 .nav{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:12px 24px;gap:16px}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.nav-logo img{height:auto;width:280px}
+.nav-logo img{height:auto;width:340px}
 .nav-links{display:flex;gap:22px;align-items:center}
 .nav-links a{font-weight:500;font-size:.85rem;color:#fff;transition:color var(--tr);white-space:nowrap}
 .nav-links a:hover,.nav-links a.active{color:#22C55E}
