@@ -74,7 +74,8 @@ header.solid .nav-logo img{width:180px}
 .section-gray{background:#F8FAFC}
 .section-inner{max-width:1200px;margin:0 auto}
 .section-tag{display:inline-block;background:#F0FFF0;color:#4CAF30;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:50px;margin-bottom:14px;border:1px solid var(--green)}
-.section-title{color:var(--green);margin-bottom:14px}
+.section-title{color:var(--dark);margin-bottom:14px}
+.section-title.green{color:var(--green)}
 .section-sub{font-size:1rem;color:var(--gray);margin-bottom:44px;max-width:560px;line-height:1.75}
 .text-center{text-align:center}
 .text-center .section-sub{margin-left:auto;margin-right:auto}
@@ -123,7 +124,7 @@ header.solid .nav-logo img{width:180px}
 .service-block.reverse>*{direction:ltr}
 .service-visual{background:var(--light);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;aspect-ratio:4/3}
 .service-visual svg{width:72px;height:72px;fill:var(--green);opacity:.35}
-.service-text h2{margin-bottom:14px;color:var(--green)}
+.service-text h2{margin-bottom:14px;color:var(--dark)}
 .service-text p{color:var(--gray);margin-bottom:22px;line-height:1.8;font-size:.95rem}
 .check-list{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
 .check-list li{display:flex;align-items:center;gap:10px;font-size:.9rem}
