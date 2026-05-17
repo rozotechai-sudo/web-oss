@@ -46,20 +46,15 @@
   <style>
     /* Hero */
     .hero {
+      min-height: 100vh;
       position: relative;
-      width: 100%;
-    }
-    .hero-photo {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .hero-inner {
-      position: absolute;
-      inset: 0;
       display: flex;
       align-items: center;
-      padding: 110px 24px 48px;
+      padding: 110px 24px 64px;
+      background-color: #0F172A;
+      background-image: url('images/hero.png');
+      background-size: cover;
+      background-position: center center;
     }
     .hero-inner {
       position: relative;
@@ -133,7 +128,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-photo" src="images/hero-cropped.png" alt="" aria-hidden="true" />
     <div class="hero-inner">
       <h1>Protegemos tu <span class="green">salud</span>,<br>tu <span class="green">vida</span> y tu <span class="green">futuro</span></h1>
       <p class="hero-sub">Asesoría profesional en seguros diseñada para ti y tu familia. Te ayudamos a encontrar la cobertura perfecta para cada etapa de tu vida.</p>
