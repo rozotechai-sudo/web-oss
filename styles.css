@@ -41,15 +41,23 @@ h3{font-size:1.15rem}
 .btn-outline-blue:hover{background:var(--blue);color:#fff}
 
 /* Header */
-header{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);box-shadow:0 1px 12px rgba(0,0,0,.08)}
+header{position:fixed;top:0;left:0;right:0;z-index:999;background:transparent;transition:background .4s ease,box-shadow .4s ease}
+header.scrolled,header.solid{background:rgba(255,255,255,.97);backdrop-filter:blur(8px);box-shadow:0 1px 12px rgba(0,0,0,.08)}
+header.solid .nav-links a{color:var(--text)}
+header.solid .nav-links a:hover,header.solid .nav-links a.active{color:var(--blue)}
+header.solid .nav-agenda{background:var(--blue);color:#fff;border-color:var(--blue)}
 .nav{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:12px 24px;gap:16px}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.nav-logo img{height:auto;width:220px}
+.nav-logo img{height:auto;width:280px}
 .nav-links{display:flex;gap:22px;align-items:center}
-.nav-links a{font-weight:500;font-size:.85rem;color:var(--text);transition:color var(--tr);white-space:nowrap}
-.nav-links a:hover,.nav-links a.active{color:var(--blue)}
-.nav-agenda{background:var(--blue);color:#fff;padding:9px 18px;border-radius:8px;font-weight:600;font-size:.85rem;transition:all var(--tr);white-space:nowrap}
-.nav-agenda:hover{background:var(--blue-dark)}
+.nav-links a{font-weight:500;font-size:.85rem;color:#fff;transition:color var(--tr);white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:#22C55E}
+header.scrolled .nav-links a{color:var(--text)}
+header.scrolled .nav-links a:hover,header.scrolled .nav-links a.active{color:var(--blue)}
+.nav-agenda{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.6);padding:9px 18px;border-radius:8px;font-weight:600;font-size:.85rem;transition:all var(--tr);white-space:nowrap}
+.nav-agenda:hover{background:rgba(255,255,255,.25)}
+header.scrolled .nav-agenda{background:var(--blue);color:#fff;border-color:var(--blue)}
+header.scrolled .nav-agenda:hover{background:var(--blue-dark)}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
 .nav-toggle span{width:24px;height:2px;background:var(--text);border-radius:2px;display:block;transition:all var(--tr)}
 

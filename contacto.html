@@ -15,7 +15,7 @@
 </head>
 <body>
 
-  <header>
+  <header class="solid">
     <nav class="nav">
       <a href="index.html" class="nav-logo"><img src="logo.png" alt="Olga Santana Insurance" /></a>
       <ul class="nav-links" id="nav-links">
@@ -139,5 +139,11 @@
     </div>
   </footer>
 
+  <script>
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
 </body>
 </html>
