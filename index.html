@@ -52,7 +52,7 @@
       align-items: center;
       padding: 110px 24px 64px;
       background-color: #0F172A;
-      background-image: url('https://images.unsplash.com/photo-1511895426328-dc8714191011?auto=format&fit=crop&w=1920&q=80');
+      background-image: url('images/hero.png');
       background-size: cover;
       background-position: center top;
     }
@@ -99,6 +99,7 @@
     /* Testimonials */
     .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 44px; }
     .testimonial { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 4px 20px rgba(0,0,0,.08); border: 1px solid #E2E8F0; }
+    .testimonial-photo { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; margin-bottom: 14px; border: 3px solid #EEF2FF; }
     .testimonial-stars { color: #F59E0B; font-size: 1rem; margin-bottom: 12px; }
     .testimonial p { font-size: .875rem; color: #64748B; line-height: 1.75; margin-bottom: 16px; font-style: italic; }
     .testimonial-name { font-weight: 600; font-size: .875rem; color: #1E293B; }
@@ -239,22 +240,25 @@
       </div>
       <div class="testimonials-grid">
         <div class="testimonial">
+          <img src="images/testimonio1.png" alt="María González" class="testimonial-photo" />
           <div class="testimonial-stars">★★★★★</div>
           <p>"Olga me ayudó a encontrar el seguro de salud perfecto para mi familia en menos de una semana. Su asesoría fue clara, honesta y sin presiones. ¡La recomiendo totalmente!"</p>
           <div class="testimonial-name">María González</div>
           <div class="testimonial-location">Orlando, FL</div>
         </div>
         <div class="testimonial">
+          <img src="images/testimonio2.png" alt="Ana Rodríguez" class="testimonial-photo" />
           <div class="testimonial-stars">★★★★★</div>
-          <p>"Gracias a Olga entendí por primera vez la diferencia entre los tipos de seguros. Me explicó todo con paciencia y encontramos un plan que cabe perfectamente en mi presupuesto."</p>
-          <div class="testimonial-name">Carlos Martínez</div>
-          <div class="testimonial-location">Miami, FL</div>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-stars">★★★★★</div>
-          <p>"Profesional, confiable y siempre disponible. Cuando tuve una pregunta después de contratar, respondió de inmediato. Es la mejor agente de seguros que he tenido."</p>
+          <p>"Gracias a Olga entendí por primera vez la diferencia entre los tipos de seguros. Me explicó todo con paciencia y encontramos un plan que cabe en mi presupuesto."</p>
           <div class="testimonial-name">Ana Rodríguez</div>
           <div class="testimonial-location">Tampa, FL</div>
+        </div>
+        <div class="testimonial">
+          <img src="images/testimonio3.png" alt="Carlos Martínez" class="testimonial-photo" />
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Profesional, confiable y siempre disponible. Cuando tuve una pregunta después de contratar, respondió de inmediato. Es la mejor agente de seguros que he tenido."</p>
+          <div class="testimonial-name">Carlos Martínez</div>
+          <div class="testimonial-location">Miami, FL</div>
         </div>
       </div>
     </div>
