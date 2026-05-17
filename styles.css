@@ -60,8 +60,8 @@ header.solid .nav-toggle span,header.scrolled .nav-toggle span{background:var(--
 .nav-links a:hover,.nav-links a.active{color:#22C55E}
 header.scrolled .nav-links a{color:var(--text)}
 header.scrolled .nav-links a:hover,header.scrolled .nav-links a.active{color:var(--blue)}
-.nav-agenda{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.6);padding:9px 18px;border-radius:8px;font-weight:600;font-size:.85rem;transition:all var(--tr);white-space:nowrap}
-.nav-agenda:hover{background:rgba(255,255,255,.25)}
+.nav-agenda{background:var(--blue);color:#fff;border:1.5px solid var(--blue);padding:9px 18px;border-radius:8px;font-weight:600;font-size:.85rem;transition:all var(--tr);white-space:nowrap}
+.nav-agenda:hover{background:var(--blue-dark)}
 header.scrolled .nav-agenda{background:var(--blue);color:#fff;border-color:var(--blue)}
 header.scrolled .nav-agenda:hover{background:var(--blue-dark)}
 /* Logo más pequeño en páginas internas */
@@ -73,8 +73,8 @@ header.solid .nav-logo img{width:180px}
 .section{padding:88px 24px}
 .section-gray{background:#F8FAFC}
 .section-inner{max-width:1200px;margin:0 auto}
-.section-tag{display:inline-block;background:#EBF9FF;color:var(--cyan-dark);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:50px;margin-bottom:14px;border:1px solid var(--cyan)}
-.section-title{color:var(--dark);margin-bottom:14px}
+.section-tag{display:inline-block;background:#F0FFF0;color:#4CAF30;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:2px;padding:5px 14px;border-radius:50px;margin-bottom:14px;border:1px solid var(--green)}
+.section-title{color:var(--green);margin-bottom:14px}
 .section-sub{font-size:1rem;color:var(--gray);margin-bottom:44px;max-width:560px;line-height:1.75}
 .text-center{text-align:center}
 .text-center .section-sub{margin-left:auto;margin-right:auto}
@@ -123,7 +123,7 @@ header.solid .nav-logo img{width:180px}
 .service-block.reverse>*{direction:ltr}
 .service-visual{background:var(--light);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;aspect-ratio:4/3}
 .service-visual svg{width:72px;height:72px;fill:var(--green);opacity:.35}
-.service-text h2{margin-bottom:14px}
+.service-text h2{margin-bottom:14px;color:var(--green)}
 .service-text p{color:var(--gray);margin-bottom:22px;line-height:1.8;font-size:.95rem}
 .check-list{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
 .check-list li{display:flex;align-items:center;gap:10px;font-size:.9rem}
