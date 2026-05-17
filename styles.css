@@ -50,8 +50,9 @@ header.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(8px);box-s
 header.solid{background:rgba(255,255,255,.97);box-shadow:0 1px 12px rgba(0,0,0,.08)}
 header.solid .nav-links a,header.scrolled .nav-links a{color:var(--text) !important}
 header.solid .nav-links a:hover,header.solid .nav-links a.active,header.scrolled .nav-links a:hover,header.scrolled .nav-links a.active{color:var(--blue) !important}
-header.solid .nav-agenda,header.scrolled .nav-agenda{background:var(--blue) !important;color:#fff !important;border-color:var(--blue) !important}
-header .nav-agenda{color:#fff !important}
+header.solid .nav-links a.nav-agenda,
+header.scrolled .nav-links a.nav-agenda,
+header .nav-links a.nav-agenda{background:var(--blue) !important;color:#fff !important;border-color:var(--blue) !important}
 header.solid .nav-toggle span,header.scrolled .nav-toggle span{background:var(--text)}
 .nav{display:flex;align-items:center;justify-content:space-between;max-width:1280px;margin:0 auto;padding:12px 24px;gap:16px}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
