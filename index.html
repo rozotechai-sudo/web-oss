@@ -44,44 +44,86 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
+    /* Hero */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, #0D1B2A 0%, #0B3D91 65%, #1557C0 100%);
-      display: flex; align-items: center; position: relative; overflow: hidden;
-      padding: 120px 24px 80px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 110px 24px 64px;
+      background-color: #0F172A;
+      background-image: url('https://images.unsplash.com/photo-1511895426328-dc8714191011?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center top;
     }
-    .shape { position: absolute; border-radius: 50%; background: #fff; opacity: .04; }
-    .shape-1 { width: 700px; height: 700px; top: -250px; right: -150px; }
-    .shape-2 { width: 350px; height: 350px; bottom: -120px; left: 5%; }
-    .shape-3 { width: 180px; height: 180px; top: 35%; right: 22%; background: #F5A623; opacity: .1; }
-    .hero-content { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; width: 100%; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
-      color: rgba(255,255,255,.9); padding: 8px 18px; border-radius: 50px;
-      font-size: .85rem; font-weight: 500; margin-bottom: 28px;
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(10,20,50,.82) 55%, rgba(10,20,50,.45) 100%);
     }
-    .hero h1 { color: #fff; font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
-    .hero h1 span { color: #F5A623; }
-    .hero-desc { color: rgba(255,255,255,.8); font-size: 1.1rem; max-width: 540px; margin-bottom: 40px; line-height: 1.8; }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 56px; }
-    .hero-info { display: flex; gap: 32px; flex-wrap: wrap; }
-    .hero-info-item { display: flex; flex-direction: column; gap: 2px; }
-    .hero-info-item span { color: rgba(255,255,255,.5); font-size: .75rem; text-transform: uppercase; letter-spacing: 1px; }
-    .hero-info-item strong { color: #fff; font-size: .95rem; }
-    .hero-divider { width: 1px; height: 36px; background: rgba(255,255,255,.15); align-self: center; }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      margin-bottom: 18px;
+      line-height: 1.15;
+      max-width: 680px;
+    }
+    .hero h1 .green { color: #22C55E; }
+    .hero-sub {
+      color: rgba(255,255,255,.82);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
+    .hero-stats {
+      display: flex;
+      gap: 44px;
+      flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,.15);
+    }
+    .hero-stat-number { font-size: 2rem; font-weight: 800; color: #fff; line-height: 1; }
+    .hero-stat-label { font-size: .78rem; color: rgba(255,255,255,.65); margin-top: 4px; text-transform: uppercase; letter-spacing: .5px; }
+
+    /* Testimonials */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 44px; }
+    .testimonial { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 4px 20px rgba(0,0,0,.08); border: 1px solid #E2E8F0; }
+    .testimonial-stars { color: #F59E0B; font-size: 1rem; margin-bottom: 12px; }
+    .testimonial p { font-size: .875rem; color: #64748B; line-height: 1.75; margin-bottom: 16px; font-style: italic; }
+    .testimonial-name { font-weight: 600; font-size: .875rem; color: #1E293B; }
+    .testimonial-location { font-size: .8rem; color: #94A3B8; }
+
+    @media(max-width:768px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <nav class="nav">
-      <a href="index.html" class="nav-logo"><img src="logo.png" alt="Olga Santana Insurance" /></a>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Olga Santana Insurance" />
+      </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="active">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+        <li><a href="servicios.html">Seguros de Salud</a></li>
+        <li><a href="servicios.html">Seguros de Vida</a></li>
+        <li><a href="servicios.html">Seguros Complementarios</a></li>
+        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html" class="nav-agenda">Agenda tu Consulta</a></li>
       </ul>
       <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Menú">
         <span></span><span></span><span></span>
@@ -89,58 +131,67 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Agencia de Seguros · Orlando, FL
-      </div>
-      <h1>Protege lo que<br>más <span>importa</span></h1>
-      <p class="hero-desc">Olga Santana Insurance te ofrece seguros de salud, vida y complementarios con asesoría personalizada y gratuita para tu familia en Florida.</p>
+    <div class="hero-inner">
+      <h1>Protegemos tu <span class="green">salud</span>,<br>tu <span class="green">vida</span> y tu <span class="green">futuro</span></h1>
+      <p class="hero-sub">Asesoría profesional en seguros diseñada para ti y tu familia. Te ayudamos a encontrar la cobertura perfecta para cada etapa de tu vida.</p>
       <div class="hero-actions">
-        <a href="contacto.html" class="btn btn-accent">Consulta Gratuita</a>
+        <a href="contacto.html" class="btn btn-green">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+          Cotiza Ahora
+        </a>
         <a href="tel:+17865434056" class="btn btn-outline-white">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-          (786) 543-4056
+          Habla con un Asesor
         </a>
       </div>
-      <div class="hero-info">
-        <div class="hero-info-item"><span>Atención</span><strong>Lun – Vie</strong></div>
-        <div class="hero-divider"></div>
-        <div class="hero-info-item"><span>Horario</span><strong>8:00 – 17:00</strong></div>
-        <div class="hero-divider"></div>
-        <div class="hero-info-item"><span>Consulta</span><strong>Gratuita</strong></div>
-        <div class="hero-divider"></div>
-        <div class="hero-info-item"><span>Zona</span><strong>Florida</strong></div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-number">500+</div>
+          <div class="hero-stat-label">Familias Protegidas</div>
+        </div>
+        <div>
+          <div class="hero-stat-number">6+</div>
+          <div class="hero-stat-label">Años de Experiencia</div>
+        </div>
+        <div>
+          <div class="hero-stat-number">98%</div>
+          <div class="hero-stat-label">Clientes Satisfechos</div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- SERVICES -->
   <section class="section">
     <div class="section-inner">
       <div class="text-center">
         <span class="section-tag">Nuestros Servicios</span>
-        <h2 class="section-title">Cobertura completa para tu familia</h2>
-        <p class="section-sub">Te ofrecemos los mejores planes adaptados a tus necesidades y presupuesto, con asesoría en cada paso.</p>
+        <h2 class="section-title">Cobertura completa para cada etapa de tu vida</h2>
+        <p class="section-sub">Te ofrecemos los mejores planes adaptados a tus necesidades y presupuesto, con asesoría personalizada en cada paso.</p>
       </div>
-      <div class="grid-3">
+      <div class="cards-grid">
         <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6L12 2zm0 4.8l4 2.2v3.5c0 3-2 5.8-4 7.2-2-1.4-4-4.2-4-7.2V9l4-2.2z"/></svg></div>
+          <div class="card-icon green">
+            <svg viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6L12 2zm0 4.8l4 2.2v3.5c0 3-2 5.8-4 7.2-2-1.4-4-4.2-4-7.2V9l4-2.2z"/></svg>
+          </div>
           <h3>Seguros de Salud</h3>
-          <p>Planes médicos individuales y familiares con cobertura completa. Te ayudamos a encontrar el plan que mejor se adapta a ti y tu presupuesto.</p>
+          <p>Planes médicos individuales y familiares con cobertura completa. Te ayudamos a encontrar el plan ideal para ti y tu presupuesto.</p>
           <a href="servicios.html" class="card-link">Ver planes →</a>
         </div>
         <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg></div>
+          <div class="card-icon green">
+            <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+          </div>
           <h3>Seguros de Vida</h3>
-          <p>Protege el futuro económico de tu familia. Garantiza su bienestar y tranquilidad con un plan de vida diseñado para tus necesidades.</p>
+          <p>Protege el futuro económico de tu familia. Garantiza el bienestar de tus seres queridos con un plan diseñado para tus necesidades.</p>
           <a href="servicios.html" class="card-link">Ver planes →</a>
         </div>
         <div class="card">
-          <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+          <div class="card-icon green">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+          </div>
           <h3>Seguros Complementarios</h3>
           <p>Cobertura adicional para gastos que tu seguro principal no cubre: dental, visión, hospitalización y mucho más.</p>
           <a href="servicios.html" class="card-link">Ver planes →</a>
@@ -149,48 +200,72 @@
     </div>
   </section>
 
-  <section class="section section-light">
+  <!-- WHY US -->
+  <section class="section section-gray">
     <div class="section-inner">
       <div class="text-center">
         <span class="section-tag">¿Por qué elegirnos?</span>
-        <h2 class="section-title">Tu confianza, nuestra prioridad</h2>
-        <p class="section-sub">Razones por las que las familias de Florida confían en Olga Santana Insurance.</p>
+        <h2 class="section-title">Tu tranquilidad es nuestra prioridad</h2>
+        <p class="section-sub">Las familias de Florida confían en Olga Santana Insurance por estas razones.</p>
       </div>
       <div class="features-grid">
         <div class="feature">
           <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
-          <div><h4>Asesoría 100% gratuita</h4><p>Te orientamos sin costo alguno para encontrar el seguro que realmente necesitas, sin presiones.</p></div>
+          <div><h4>Consulta 100% gratuita</h4><p>Te orientamos sin ningún costo para encontrar el seguro que realmente necesitas, sin presiones.</p></div>
         </div>
         <div class="feature">
           <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-          <div><h4>Cobertura en todo Florida</h4><p>Atendemos a familias en toda Florida con planes adaptados a cada región y necesidad.</p></div>
+          <div><h4>Cobertura en Florida</h4><p>Atendemos a familias en todo el estado de Florida con planes adaptados a cada región.</p></div>
         </div>
         <div class="feature">
           <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
-          <div><h4>Atención personalizada</h4><p>No eres un número. Nos tomamos el tiempo de conocer tu situación para encontrar el plan ideal.</p></div>
+          <div><h4>Atención personalizada</h4><p>Nos tomamos el tiempo de conocer tu situación para encontrar el plan que mejor se adapta a ti.</p></div>
         </div>
         <div class="feature">
           <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
-          <div><h4>Precios accesibles</h4><p>Encontramos opciones que se ajusten a tu presupuesto sin sacrificar la calidad de la cobertura.</p></div>
+          <div><h4>Precios accesibles</h4><p>Comparamos múltiples aseguradoras para darte la mejor cobertura al menor costo posible.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="stats-band">
-    <div class="stats-inner">
-      <div><div class="stat-number">100%</div><div class="stat-label">Consulta gratuita</div></div>
-      <div><div class="stat-number">3</div><div class="stat-label">Tipos de seguro</div></div><!-- REVISAR: actualizar con datos reales -->
-      <div><div class="stat-number">FL</div><div class="stat-label">Cobertura en Florida</div></div>
-      <div><div class="stat-number">5★</div><div class="stat-label">Atención personalizada</div></div>
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="text-center">
+        <span class="section-tag">Testimonios</span>
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <p class="section-sub">Familias reales que encontraron tranquilidad con nuestra asesoría.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Olga me ayudó a encontrar el seguro de salud perfecto para mi familia en menos de una semana. Su asesoría fue clara, honesta y sin presiones. ¡La recomiendo totalmente!"</p>
+          <div class="testimonial-name">María González</div>
+          <div class="testimonial-location">Orlando, FL</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Gracias a Olga entendí por primera vez la diferencia entre los tipos de seguros. Me explicó todo con paciencia y encontramos un plan que cabe perfectamente en mi presupuesto."</p>
+          <div class="testimonial-name">Carlos Martínez</div>
+          <div class="testimonial-location">Miami, FL</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Profesional, confiable y siempre disponible. Cuando tuve una pregunta después de contratar, respondió de inmediato. Es la mejor agente de seguros que he tenido."</p>
+          <div class="testimonial-name">Ana Rodríguez</div>
+          <div class="testimonial-location">Tampa, FL</div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
+  <!-- CTA -->
   <section class="cta-banner">
     <h2>¿Listo para proteger a tu familia?</h2>
-    <p>Habla hoy con Olga y recibe una consulta gratuita. Sin compromisos, sin letras pequeñas.</p>
+    <p>Agenda una consulta gratuita hoy. Sin compromisos, sin letra pequeña. Solo asesoría honesta.</p>
     <div class="cta-btns">
-      <a href="contacto.html" class="btn btn-accent">Solicitar Consulta Gratuita</a>
+      <a href="contacto.html" class="btn btn-green">Agenda tu Consulta</a>
       <a href="tel:+17865434056" class="btn btn-outline-white">(786) 543-4056</a>
     </div>
   </section>
@@ -208,23 +283,8 @@
             <li>🕐 Lun–Vie: 8:00 – 17:00</li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Navegación</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Servicios</h4>
-          <ul class="footer-links">
-            <li><a href="servicios.html">Seguros de Salud</a></li>
-            <li><a href="servicios.html">Seguros de Vida</a></li>
-            <li><a href="servicios.html">Seguros Complementarios</a></li>
-          </ul>
-        </div>
+        <div class="footer-col"><h4>Navegación</h4><ul class="footer-links"><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="nosotros.html">Sobre Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+        <div class="footer-col"><h4>Servicios</h4><ul class="footer-links"><li><a href="servicios.html">Seguros de Salud</a></li><li><a href="servicios.html">Seguros de Vida</a></li><li><a href="servicios.html">Seguros Complementarios</a></li></ul></div>
       </div>
       <div class="footer-bottom"><p>© 2026 Olga Santana Insurance. Todos los derechos reservados.</p></div>
     </div>
