@@ -390,7 +390,7 @@
         try{
           const res=await fetch(WEBHOOK,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:text})});
           const data=await res.json(); typing.remove();
-          addMsg(data.response||data.output||data.text||"Gracias por tu mensaje. Te contactaremos pronto.","bot");
+          const reply=(Array.isArray(data)?data[0].output:data.response||data.output||data.text)||"Gracias por tu mensaje. Te contactaremos pronto."; addMsg(reply,"bot");
         }catch(e){ typing.remove(); addMsg("Disculpa, hubo un error. Llámanos al (786) 543-4056.","bot"); }
         send.disabled=false; input.focus();
       }
