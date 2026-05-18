@@ -93,7 +93,7 @@
 
         <div class="form-box">
           <h3>Solicita tu consulta gratuita</h3>
-          <form id="contactForm">
+          <form id="contactForm" action="javascript:void(0);" onsubmit="return false;">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="nombre">Nombre *</label>
@@ -150,6 +150,7 @@
               try {
                 await fetch('https://santana-seguros-n8n.ryvtdk.easypanel.host/webhook-test/lead', {
                   method: 'POST',
+                  mode: 'no-cors',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(data)
                 });
