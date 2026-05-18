@@ -139,12 +139,12 @@
               btn.textContent = 'Enviando...';
               btn.disabled = true;
               const data = {
-                nombre: document.getElementById('nombre').value,
+                name: document.getElementById('nombre').value,
                 apellido: document.getElementById('apellido').value,
-                telefono: document.getElementById('telefono').value,
+                phone: document.getElementById('telefono').value,
                 email: document.getElementById('email').value,
-                "tipo de seguro de interes": document.getElementById('servicio').value,
-                mensaje: document.getElementById('mensaje').value,
+                seguro: document.getElementById('servicio').value,
+                message: document.getElementById('mensaje').value,
                 fecha: new Date().toISOString()
               };
               try {
