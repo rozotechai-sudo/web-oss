@@ -153,5 +153,30 @@
       }
     });
   </script>
+
+  <!-- Chat Widget IA -->
+  <button class="chat-btn" onclick="document.getElementById('chatWindow').classList.toggle('open')" aria-label="Chat IA">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-avatar">OS</div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">Asistente Olga Santana</div>
+        <div class="chat-header-status">● IA disponible 24/7</div>
+      </div>
+      <button class="chat-close" onclick="document.getElementById('chatWindow').classList.remove('open')" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">¡Hola! Soy el asistente de Olga Santana Insurance. ¿En qué puedo ayudarte? 😊</div>
+    </div>
+    <div class="chat-input-area">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Escribe tu pregunta..." />
+      <button class="chat-send" id="chatSend" aria-label="Enviar"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+    </div>
+  </div>
+  <script>
+    (function(){const WEBHOOK="CHAT_WEBHOOK_URL";const input=document.getElementById("chatInput");const send=document.getElementById("chatSend");const msgs=document.getElementById("chatMessages");function addMsg(t,tp){const d=document.createElement("div");d.className="chat-msg "+tp;d.textContent=t;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}function showTyping(){const t=document.createElement("div");t.className="chat-typing";t.id="typing";t.innerHTML="<span></span><span></span><span></span>";msgs.appendChild(t);msgs.scrollTop=msgs.scrollHeight;return t;}async function sendMsg(){const text=input.value.trim();if(!text)return;addMsg(text,"user");input.value="";send.disabled=true;const typing=showTyping();try{const res=await fetch(WEBHOOK,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:text})});const data=await res.json();typing.remove();addMsg(data.response||data.output||data.text||"Gracias por tu mensaje.","bot");}catch(e){typing.remove();addMsg("Error. Llámanos al (786) 543-4056.","bot");}send.disabled=false;input.focus();}send.addEventListener("click",sendMsg);input.addEventListener("keydown",function(e){if(e.key==="Enter")sendMsg();});})();
+  </script>
 </body>
 </html>
