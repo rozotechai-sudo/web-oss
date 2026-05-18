@@ -93,7 +93,7 @@
 
         <div class="form-box">
           <h3>Solicita tu consulta gratuita</h3>
-          <form action="mailto:olgasantanainsurance24@gmail.com" method="post" enctype="text/plain">
+          <form id="contactForm">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="nombre">Nombre *</label>
@@ -128,8 +128,48 @@
               <label class="form-label" for="mensaje">Mensaje (opcional)</label>
               <textarea class="form-textarea" id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente tu situación o lo que necesitas..."></textarea>
             </div>
-            <button type="submit" class="btn" style="width:100%;justify-content:center;background:#26469A;color:#fff;border-color:#26469A;">Enviar solicitud</button>
+            <div id="formMsg" style="display:none;padding:12px 16px;border-radius:8px;font-size:.9rem;margin-bottom:12px;"></div>
+            <button type="submit" id="submitBtn" class="btn" style="width:100%;justify-content:center;background:#26469A;color:#fff;border-color:#26469A;">Enviar solicitud</button>
           </form>
+          <script>
+            document.getElementById('contactForm').addEventListener('submit', async function(e) {
+              e.preventDefault();
+              const btn = document.getElementById('submitBtn');
+              const msg = document.getElementById('formMsg');
+              btn.textContent = 'Enviando...';
+              btn.disabled = true;
+              const data = {
+                nombre: document.getElementById('nombre').value,
+                apellido: document.getElementById('apellido').value,
+                telefono: document.getElementById('telefono').value,
+                email: document.getElementById('email').value,
+                servicio: document.getElementById('servicio').value,
+                mensaje: document.getElementById('mensaje').value,
+                fecha: new Date().toISOString()
+              };
+              try {
+                await fetch('https://santana-seguros-n8n.ryvtdk.easypanel.host/webhook-test/lead', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(data)
+                });
+                msg.style.display = 'block';
+                msg.style.background = '#F0FFF4';
+                msg.style.color = '#16A34A';
+                msg.style.border = '1px solid #88DB65';
+                msg.textContent = '✓ Mensaje enviado. Te contactaremos pronto.';
+                this.reset();
+              } catch(err) {
+                msg.style.display = 'block';
+                msg.style.background = '#FFF0F0';
+                msg.style.color = '#DC2626';
+                msg.style.border = '1px solid #FCA5A5';
+                msg.textContent = 'Error al enviar. Llámanos al (786) 543-4056.';
+              }
+              btn.textContent = 'Enviar solicitud';
+              btn.disabled = false;
+            });
+          </script>
         </div>
 
       </div>
